@@ -1,2 +1,5 @@
+pytorch
 fastapi
 uvicorn
+torchvision
+pillow
