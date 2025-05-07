@@ -6,7 +6,10 @@ from torchvision import transforms
 from PIL import Image
 
 # Load the trained model (replace with your model path)
-model = torch.load("model.pth", map_location=torch.device("cpu"))
+model = torch.load(
+    "model.pth",
+    map_location=torch.device("cpu"),
+)
 model.eval()
 
 # Initialize FastAPI app
@@ -28,6 +31,11 @@ transform = transforms.Compose(
         transforms.ToTensor(),
     ]
 )
+
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the Jaundice Detection API!"}
 
 
 @app.post("/predict")
