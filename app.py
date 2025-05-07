@@ -35,7 +35,7 @@ transform = transforms.Compose(
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to the Jaundice Detection API!"}
+    return {"message": "Welcome to the Jaundice Detection API! New one"}
 
 
 @app.post("/predict")
